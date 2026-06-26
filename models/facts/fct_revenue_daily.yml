@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: fct_revenue_daily
+    description: "Contains one record per order date, customer segment, product category, and sales region with pre-aggregated revenue KPIs for BI dashboards."
+    columns:
+      - name: ORDER_DATE_KEY
+        data_type: VARCHAR(16777216)
+        description: "Foreign key to the date dimension for the order date."
+        tests:
+          - not_null
+      - name: CUSTOMER_SEGMENT
+        data_type: VARCHAR(16777216)
+        description: "Market segment classification of the customer."
+      - name: PRODUCT_CATEGORY
+        data_type: VARCHAR(16777216)
+        description: "Top-level category of the product."
+      - name: REVENUE_TYPE
+        data_type: VARCHAR(16777216)
+        description: "Revenue classification of the product."
+      - name: SALES_REGION
+        data_type: VARCHAR(16777216)
+        description: "Geographic region of the sales representative."
+      - name: ORDER_YEAR
+        data_type: NUMBER(38,0)
+        description: "Calendar year of the order date."
+      - name: ORDER_QUARTER
+        data_type: NUMBER(38,0)
+        description: "Calendar quarter of the order date."
+      - name: ORDER_MONTH
+        data_type: NUMBER(38,0)
+        description: "Calendar month of the order date."
+      - name: YEAR_MONTH
+        data_type: VARCHAR(16777216)
+        description: "Formatted year-month label for the order date."
+      - name: DEAL_COUNT
+        data_type: NUMBER(38,0)
+        description: "Count of distinct deals closed in the period."
+      - name: UNIQUE_CUSTOMERS
+        data_type: NUMBER(38,0)
+        description: "Count of distinct customers with closed deals."
+      - name: TOTAL_UNITS_SOLD
+        data_type: NUMBER(38,0)
+        description: "Total number of units sold."
+      - name: TOTAL_GROSS_REVENUE
+        data_type: NUMBER(38,2)
+        description: "Total revenue before discounts."
+      - name: TOTAL_DISCOUNTS
+        data_type: NUMBER(38,2)
+        description: "Total monetary discounts applied."
+      - name: TOTAL_NET_REVENUE
+        data_type: NUMBER(38,2)
+        description: "Total revenue after discounts."
+      - name: AVG_DEAL_SIZE
+        data_type: NUMBER(38,2)
+        description: "Average net amount per deal."
+      - name: TOTAL_GROSS_PROFIT
+        data_type: NUMBER(38,2)
+        description: "Total gross profit for the period."
+      - name: AVG_GROSS_MARGIN_PCT
+        data_type: NUMBER(38,4)
+        description: "Average gross margin percentage across deals."
+      - name: AVG_DISCOUNT_PCT
+        data_type: NUMBER(38,4)
+        description: "Average discount percentage applied across deals."
+      - name: EFFECTIVE_DISCOUNT_RATE
+        data_type: NUMBER(38,4)
+        description: "Effective discount rate as total discounts divided by total gross revenue."
+      - name: YTD_NET_REVENUE
+        data_type: NUMBER(38,2)
+        description: "Year-to-date cumulative net revenue partitioned by segment, category, and year."
+      - name: QTD_NET_REVENUE
+        data_type: NUMBER(38,2)
+        description: "Quarter-to-date cumulative net revenue partitioned by segment, category, year, and quarter."

@@ -1,0 +1,49 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Contains one record per customer account with company details, segmentation, and account status."
+    columns:
+      - name: CUSTOMER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the customer."
+        tests:
+          - not_null
+      - name: COMPANY_NAME
+        data_type: VARCHAR(16777216)
+        description: "Name of the customer company."
+      - name: INDUSTRY
+        data_type: VARCHAR(16777216)
+        description: "Industry vertical the customer operates in."
+      - name: SEGMENT
+        data_type: VARCHAR(16777216)
+        description: "Market segment classification of the customer."
+      - name: CITY
+        data_type: VARCHAR(16777216)
+        description: "City where the customer is located."
+      - name: STATE
+        data_type: VARCHAR(16777216)
+        description: "State or province where the customer is located."
+      - name: COUNTRY
+        data_type: VARCHAR(16777216)
+        description: "Country where the customer is located."
+      - name: ACCOUNT_OWNER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the account owner responsible for this customer."
+        tests:
+          - not_null
+      - name: UNIT_ANNUAL_VALUE
+        data_type: FLOAT
+        description: "Annual contract value for the customer account."
+      - name: STATUS
+        data_type: VARCHAR(16777216)
+        description: "Current status of the customer account."
+      - name: CREATED_DATE
+        data_type: DATE
+        description: "Date when the customer record was created."
+      - name: UPDATED_DATE
+        data_type: DATE
+        description: "Date when the customer record was last updated."
+      - name: IS_ACTIVE
+        data_type: BOOLEAN
+        description: "Boolean flag indicating whether the customer account is currently active."

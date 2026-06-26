@@ -1,0 +1,56 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Contains one record per sales order with pricing, discounts, and outcome details."
+    columns:
+      - name: ORDER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the order."
+        tests:
+          - not_null
+      - name: ORDER_DATE
+        data_type: DATE
+        description: "Date when the order was placed."
+      - name: CLOSE_DATE
+        data_type: DATE
+        description: "Date when the order was closed."
+      - name: CUSTOMER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the customer associated with this order."
+      - name: EMPLOYEE_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the employee who handled this order."
+      - name: PRODUCT_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the product sold in this order."
+      - name: QUANTITY
+        data_type: NUMBER(38,0)
+        description: "Number of units ordered."
+      - name: UNIT_PRICE
+        data_type: FLOAT
+        description: "List price per unit before discounts."
+      - name: DISCOUNT_PCT
+        data_type: FLOAT
+        description: "Discount percentage applied to the order."
+      - name: NET_UNIT_PRICE
+        data_type: FLOAT
+        description: "Unit price after discount is applied."
+      - name: GROSS_AMOUNT
+        data_type: FLOAT
+        description: "Total order amount before discounts."
+      - name: NET_AMOUNT
+        data_type: FLOAT
+        description: "Total order amount after discounts."
+      - name: DISCOUNT_AMOUNT
+        data_type: FLOAT
+        description: "Total monetary discount applied to the order."
+      - name: STATUS
+        data_type: VARCHAR(16777216)
+        description: "Current status of the order."
+      - name: PAYMENT_METHOD
+        data_type: VARCHAR(16777216)
+        description: "Payment method used for the order."
+      - name: IS_WON
+        data_type: BOOLEAN
+        description: "Boolean flag indicating whether the order was won."

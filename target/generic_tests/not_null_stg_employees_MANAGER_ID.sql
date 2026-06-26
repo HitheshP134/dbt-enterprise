@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="MANAGER_ID", model=get_where_subquery(ref('stg_employees'))) }}

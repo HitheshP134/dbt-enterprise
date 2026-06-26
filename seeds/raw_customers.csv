@@ -1,0 +1,21 @@
+customer_id,company_name,industry,segment,city,state,country,account_owner_id,unit_annual_value,status,created_at,updated_at
+1,Apex Dynamics,Financial Services,Enterprise,New York,NY,US,3,250000,active,2022-01-10,2024-11-01
+2,BlueStar Logistics,Supply Chain,Mid-Market,Chicago,IL,US,1,85000,active,2022-03-22,2024-09-15
+3,ClearPath Healthcare,Healthcare,Enterprise,Boston,MA,US,4,320000,active,2021-11-05,2025-01-20
+4,Delta Retail Group,Retail,SMB,Austin,TX,US,2,32000,active,2023-02-14,2024-12-01
+5,Echo Technologies,Technology,Enterprise,San Francisco,CA,US,5,410000,active,2021-06-30,2025-02-10
+6,Falcon Energy,Energy,Mid-Market,Houston,TX,US,1,120000,active,2022-07-18,2024-08-22
+7,Global Trade Co,Manufacturing,Enterprise,Detroit,MI,US,3,280000,active,2020-09-01,2024-10-05
+8,Horizon Media,Media,Mid-Market,Los Angeles,CA,US,2,95000,active,2023-01-08,2024-11-30
+9,Ironclad Insurance,Insurance,Enterprise,New York,NY,US,4,375000,active,2021-04-15,2025-03-01
+10,Juniper Pharma,Pharma,Enterprise,Philadelphia,PA,US,5,490000,active,2020-12-01,2025-01-15
+11,Keystone Consulting,Professional Services,Mid-Market,Washington,DC,US,1,110000,active,2022-10-20,2024-07-10
+12,Luminary Education,Education,SMB,Denver,CO,US,2,28000,churned,2023-05-03,2024-06-01
+13,Monarch Automotive,Automotive,Enterprise,Nashville,TN,US,3,215000,active,2022-02-28,2024-12-15
+14,Nova Construction,Construction,SMB,Phoenix,AZ,US,1,45000,active,2023-08-12,2024-09-01
+15,Olympus Banking,Financial Services,Enterprise,Charlotte,NC,US,4,550000,active,2020-06-15,2025-02-28
+16,Pinnacle Software,Technology,Mid-Market,Seattle,WA,US,5,130000,active,2022-11-30,2024-10-20
+17,Quartz Realty,Real Estate,SMB,Miami,FL,US,2,38000,at-risk,2023-03-25,2024-08-05
+18,Redwood Agriculture,Agriculture,SMB,Sacramento,CA,US,1,22000,churned,2023-06-10,2024-05-15
+19,Sterling Telecom,Telecommunications,Enterprise,Dallas,TX,US,3,340000,active,2021-08-20,2025-01-05
+20,Titan Manufacturing,Manufacturing,Mid-Market,Cleveland,OH,US,4,98000,active,2022-09-05,2024-11-10

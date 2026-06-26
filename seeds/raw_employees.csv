@@ -1,0 +1,9 @@
+employee_id,first_name,last_name,email,department,title,region,manager_id,hire_date,is_active
+1,Marcus,Thompson,m.thompson@company.com,Sales,Senior Account Executive,Central,6,2019-03-15,true
+2,Priya,Sharma,p.sharma@company.com,Sales,Account Executive,West,6,2020-07-01,true
+3,Daniel,Roberts,d.roberts@company.com,Sales,Senior Account Executive,Northeast,6,2018-11-10,true
+4,Chloe,Anderson,c.anderson@company.com,Sales,Account Executive,Southeast,6,2021-01-20,true
+5,James,Chen,j.chen@company.com,Sales,Senior Account Executive,West,6,2019-09-05,true
+6,Rachel,Kim,r.kim@company.com,Sales,VP of Sales,,7,2017-05-01,true
+7,David,O'Brien,d.obrien@company.com,Sales,Chief Revenue Officer,,null,2016-02-15,true
+8,Aisha,Patel,a.patel@company.com,Sales,Account Executive,Northeast,6,2022-04-11,true

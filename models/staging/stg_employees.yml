@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_employees
+    description: "Contains one record per employee with contact details, role, and organizational hierarchy."
+    columns:
+      - name: EMPLOYEE_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the employee."
+      - name: FIRST_NAME
+        data_type: VARCHAR(16777216)
+        description: "First name of the employee."
+      - name: LAST_NAME
+        data_type: VARCHAR(16777216)
+        description: "Last name of the employee."
+      - name: FULL_NAME
+        data_type: VARCHAR(16777216)
+        description: "Concatenated first and last name of the employee."
+      - name: EMAIL
+        data_type: VARCHAR(16777216)
+        description: "Email address of the employee in lowercase."
+      - name: DEPARTMENT
+        data_type: VARCHAR(16777216)
+        description: "Department the employee belongs to."
+      - name: TITLE
+        data_type: VARCHAR(16777216)
+        description: "Job title of the employee."
+      - name: REGION
+        data_type: VARCHAR(16777216)
+        description: "Geographic region the employee is assigned to."
+      - name: MANAGER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the employee's manager."
+      - name: HIRE_DATE
+        data_type: DATE
+        description: "Date when the employee was hired."
+      - name: IS_ACTIVE
+        data_type: BOOLEAN
+        description: "Boolean flag indicating whether the employee is currently active."

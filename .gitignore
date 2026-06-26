@@ -1,0 +1,10 @@
+package-lock.yml
+packages.yml
+profiles.yml
+.env
+profiles.yml.bkp
+.user.yml
+venv/
+logs/
+.vscode/
+dbt_packages/

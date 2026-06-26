@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="DATE_KEY", model=get_where_subquery(ref('dim_date'))) }}

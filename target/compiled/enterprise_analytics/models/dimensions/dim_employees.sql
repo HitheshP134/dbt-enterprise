@@ -1,0 +1,45 @@
+with employees as (
+    select * from SALES.STAGE_stage.stg_employees
+),
+
+-- self-join to resolve manager name
+with_manager as (
+    select
+        e.employee_id,
+        e.full_name,
+        e.email,
+        e.department,
+        e.title,
+        e.region,
+        e.hire_date,
+        e.is_active,
+        e.manager_id,
+        m.full_name as manager_name,
+        case
+            when e.title like '%VP%'    then 'Leadership'
+            when e.title like '%Chief%' then 'Executive'
+            when e.title like 'Senior%' then 'Senior IC'
+            else 'IC'
+        end as seniority_band
+    from employees e
+    left join employees m on e.manager_id = m.employee_id
+),
+
+final as (
+    select
+        md5(cast(coalesce(cast(employee_id as TEXT), '_dbt_utils_surrogate_key_null_') as TEXT)) as employee_key,
+        employee_id,
+        full_name,
+        email,
+        department,
+        title,
+        seniority_band,
+        region,
+        manager_id,
+        manager_name,
+        hire_date,
+        is_active
+    from with_manager
+)
+
+select * from final

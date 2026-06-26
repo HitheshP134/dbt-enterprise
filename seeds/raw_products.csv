@@ -1,0 +1,13 @@
+product_id,product_name,category,subcategory,unit_price,cost_price,billing_type,is_active,launched_at
+1,Analytics Platform Pro,Software,Analytics,2499.00,600.00,annual_license,true,2021-01-15
+2,Analytics Platform Basic,Software,Analytics,999.00,240.00,annual_license,true,2021-01-15
+3,Data Integration Suite,Software,Data Management,3499.00,840.00,annual_license,true,2020-06-01
+4,Cloud Security Shield,Software,Security,1799.00,430.00,annual_license,true,2021-09-10
+5,Managed Cloud Hosting,Infrastructure,Cloud,4999.00,2200.00,monthly_subscription,true,2020-03-01
+6,Enterprise Support Tier 1,Services,Support,12000.00,4800.00,annual_contract,true,2020-01-01
+7,Enterprise Support Tier 2,Services,Support,24000.00,9600.00,annual_contract,true,2020-01-01
+8,Implementation Services,Services,Professional,8500.00,3400.00,one_time,true,2020-01-01
+9,Training Workshop,Services,Training,1500.00,500.00,one_time,true,2022-04-01
+10,Data Connector Pack,Software,Data Management,799.00,190.00,annual_license,true,2022-07-15
+11,Mobile Analytics Add-on,Software,Analytics,599.00,143.00,annual_license,true,2023-02-01
+12,Legacy Reporting Suite,Software,Analytics,499.00,119.00,annual_license,false,2019-06-01

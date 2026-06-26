@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: stg_products
+    description: "Contains one record per product with pricing, margin, and lifecycle details."
+    columns:
+      - name: PRODUCT_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the product."
+        tests:
+          - not_null
+          - unique
+      - name: PRODUCT_NAME
+        data_type: VARCHAR(16777216)
+        description: "Name of the product."
+      - name: CATEGORY
+        data_type: VARCHAR(16777216)
+        description: "Top-level category the product belongs to."
+      - name: SUBCATEGORY
+        data_type: VARCHAR(16777216)
+        description: "Subcategory within the product category."
+      - name: UNIT_PRICE
+        data_type: FLOAT
+        description: "List price per unit of the product."
+      - name: COST_PRICE
+        data_type: FLOAT
+        description: "Cost price per unit of the product."
+      - name: GROSS_MARGIN_AMOUNT
+        data_type: FLOAT
+        description: "Monetary difference between unit price and cost price."
+      - name: GROSS_MARGIN_PCT
+        data_type: FLOAT
+        description: "Gross margin as a percentage of unit price."
+      - name: BILLING_TYPE
+        data_type: VARCHAR(16777216)
+        description: "Billing method used for the product."
+      - name: IS_ACTIVE
+        data_type: BOOLEAN
+        description: "Boolean flag indicating whether the product is currently active."
+      - name: LAUNCHED_DATE
+        data_type: DATE
+        description: "Date when the product was launched."

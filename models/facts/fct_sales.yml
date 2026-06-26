@@ -1,0 +1,129 @@
+version: 2
+
+models:
+  - name: fct_sales
+    description: "Contains one record per sales order line, capturing transactional metrics, dimensional keys, and derived financial measures."
+    columns:
+      - name: SALES_KEY
+        data_type: VARCHAR(32)
+        description: "Surrogate key uniquely identifying each sales fact record."
+
+      - name: ORDER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the order."
+
+      - name: CUSTOMER_KEY
+        data_type: VARCHAR(32)
+        description: "Foreign key linking to the customer dimension."
+
+      - name: PRODUCT_KEY
+        data_type: VARCHAR(32)
+        description: "Foreign key linking to the product dimension."
+
+      - name: EMPLOYEE_KEY
+        data_type: VARCHAR(32)
+        description: "Foreign key linking to the employee dimension."
+
+      - name: ORDER_DATE_KEY
+        data_type: VARCHAR(1)
+        description: "Foreign key linking to the date dimension for the order date."
+
+      - name: CLOSE_DATE_KEY
+        data_type: VARCHAR(1)
+        description: "Foreign key linking to the date dimension for the close date."
+
+      - name: STATUS
+        data_type: VARCHAR(16777216)
+        description: "Current status of the order."
+
+      - name: PAYMENT_METHOD
+        data_type: VARCHAR(16777216)
+        description: "Payment method used for the order."
+
+      - name: IS_WON
+        data_type: BOOLEAN
+        description: "Boolean flag indicating whether the order was won."
+
+      - name: QUANTITY
+        data_type: NUMBER(38,0)
+        description: "Number of units ordered."
+
+      - name: UNIT_PRICE
+        data_type: FLOAT
+        description: "List price per unit before discounts."
+
+      - name: DISCOUNT_PCT
+        data_type: FLOAT
+        description: "Discount percentage applied to the order."
+
+      - name: DISCOUNT_AMOUNT
+        data_type: FLOAT
+        description: "Total monetary discount applied to the order."
+
+      - name: GROSS_AMOUNT
+        data_type: FLOAT
+        description: "Total order amount before discounts."
+
+      - name: NET_AMOUNT
+        data_type: FLOAT
+        description: "Total order amount after discounts."
+
+      - name: TOTAL_COST
+        data_type: FLOAT
+        description: "Total cost of goods sold for the order line."
+
+      - name: GROSS_PROFIT
+        data_type: FLOAT
+        description: "Gross profit calculated as net amount minus total cost."
+
+      - name: GROSS_PROFIT_PCT
+        data_type: FLOAT
+        description: "Gross profit as a percentage of net amount."
+
+      - name: CUSTOMER_SEGMENT
+        data_type: VARCHAR(16777216)
+        description: "Market segment classification of the customer."
+
+      - name: INDUSTRY
+        data_type: VARCHAR(16777216)
+        description: "Industry vertical of the customer."
+
+      - name: REVENUE_TIER
+        data_type: VARCHAR(6)
+        description: "Revenue tier classification of the customer."
+
+      - name: COUNTRY
+        data_type: VARCHAR(16777216)
+        description: "Country where the customer is located."
+
+      - name: PRODUCT_CATEGORY
+        data_type: VARCHAR(16777216)
+        description: "Top-level category of the product."
+
+      - name: PRODUCT_SUBCATEGORY
+        data_type: VARCHAR(16777216)
+        description: "Subcategory of the product."
+
+      - name: REVENUE_TYPE
+        data_type: VARCHAR(13)
+        description: "Revenue classification of the product."
+
+      - name: SALES_REGION
+        data_type: VARCHAR(16777216)
+        description: "Geographic region of the sales representative."
+
+      - name: ORDER_YEAR
+        data_type: NUMBER(4,0)
+        description: "Calendar year of the order date."
+
+      - name: ORDER_QUARTER
+        data_type: NUMBER(2,0)
+        description: "Calendar quarter of the order date."
+
+      - name: ORDER_MONTH
+        data_type: NUMBER(2,0)
+        description: "Calendar month of the order date."
+
+      - name: YEAR_MONTH
+        data_type: VARCHAR(3)
+        description: "Formatted year-month label for the order date."

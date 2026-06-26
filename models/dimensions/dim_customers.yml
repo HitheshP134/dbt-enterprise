@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Contains one record per customer with descriptive attributes, account health metrics, and revenue tier classification."
+    columns:
+      - name: CUSTOMER_KEY
+        data_type: VARCHAR(32)
+        description: "Surrogate key for the customer dimension."
+      - name: CUSTOMER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the customer."
+      - name: COMPANY_NAME
+        data_type: VARCHAR(16777216)
+        description: "Name of the customer company."
+      - name: INDUSTRY
+        data_type: VARCHAR(16777216)
+        description: "Industry vertical the customer operates in."
+      - name: SEGMENT
+        data_type: VARCHAR(16777216)
+        description: "Market segment classification of the customer."
+      - name: CITY
+        data_type: VARCHAR(16777216)
+        description: "City where the customer is located."
+      - name: STATE
+        data_type: VARCHAR(16777216)
+        description: "State or province where the customer is located."
+      - name: COUNTRY
+        data_type: VARCHAR(16777216)
+        description: "Country where the customer is located."
+      - name: LOCATION
+        data_type: VARCHAR(16777216)
+        description: "Formatted city and state combination for the customer."
+      - name: STATUS
+        data_type: VARCHAR(16777216)
+        description: "Current status of the customer account."
+      - name: IS_ACTIVE
+        data_type: BOOLEAN
+        description: "Boolean flag indicating whether the customer account is currently active."
+      - name: UNIT_ANNUAL_VALUE
+        data_type: FLOAT
+        description: "Annual contract value for the customer account."
+      - name: REVENUE_TIER
+        data_type: VARCHAR(6)
+        description: "Revenue tier classification based on annual value."
+      - name: ACCOUNT_OWNER_ID
+        data_type: NUMBER(38,0)
+        description: "Unique identifier for the account owner responsible for this customer."
+      - name: CREATED_DATE
+        data_type: DATE
+        description: "Date when the customer record was created."
+      - name: UPDATED_DATE
+        data_type: DATE
+        description: "Date when the customer record was last updated."
