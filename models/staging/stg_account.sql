@@ -20,4 +20,18 @@ renamed as (
     from source
 )
 
-select * from renamed
+select
+    account_id,
+    account_name,
+    account_industry,
+    account_segment,
+    account_city,
+    account_state,
+    account_country,
+    account_owner_id,
+    account_unit_annual_value,
+    account_status,
+    account_created_date,
+    account_updated_date,
+    is_active
+from renamed
