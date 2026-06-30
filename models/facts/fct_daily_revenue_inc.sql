@@ -8,6 +8,13 @@
 
 -- Grain: intended one row per day. Aggregates net revenue and margin from sales.
 with sales as (
+    select
+        order_date_key,
+        net_amount,
+        gross_profit,
+        quantity
+    from {{ ref('fct_sales') }}
+),
     select * from {{ ref('fct_sales') }}
 ),
 
