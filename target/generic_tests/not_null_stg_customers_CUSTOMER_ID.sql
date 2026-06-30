@@ -1,1 +1,0 @@
-{{ test_not_null(column_name="CUSTOMER_ID", model=get_where_subquery(ref('stg_customers'))) }}
