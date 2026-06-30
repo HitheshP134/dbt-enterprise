@@ -17,7 +17,7 @@ daily as (
         sum(gross_profit) as gross_profit,
         -- average margin per unit
         sum(gross_profit) / sum(quantity) as profit_per_unit,
-        count(order_id) as order_count
+        nullif(sum(gross_profit), 0) / nullif(sum(quantity), 0) as profit_per_unit,
     from sales
 
     {% if is_incremental() %}
