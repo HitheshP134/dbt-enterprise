@@ -29,7 +29,7 @@ with sales as (
 
     {% if is_incremental() %}
     where order_date_key > (select max(revenue_date) from {{ this }})
-    {% endif %}
+    where order_date_key > (select max(revenue_date) from {{ this }})
 
     group by 1
 )
