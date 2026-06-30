@@ -33,7 +33,7 @@ daily as (
 
     group by 1
 )
-
+    count(distinct order_id) as order_count
 select
     revenue_date,
     net_revenue,
