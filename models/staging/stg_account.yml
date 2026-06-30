@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: stg_account
+    description: "Contains one record per customer account with firmographic details, ownership, and lifecycle status."
+    columns:
+      - name: account_id
+        data_type: NUMBER(38,0)
+        description: "Unique numeric identifier for the account."
+
+      - name: account_name
+        data_type: VARCHAR(16777216)
+        description: "Business name of the account."
+
+      - name: account_industry
+        data_type: VARCHAR(16777216)
+        description: "Industry classification of the account."
+
+      - name: account_segment
+        data_type: VARCHAR(16777216)
+        description: "Market segment the account belongs to, such as Enterprise or Mid-Market."
+
+      - name: account_city
+        data_type: VARCHAR(16777216)
+        description: "City where the account is headquartered."
+
+      - name: account_state
+        data_type: VARCHAR(16777216)
+        description: "State or province where the account is located."
+
+      - name: account_country
+        data_type: VARCHAR(16777216)
+        description: "Country where the account is located."
+
+      - name: account_owner_id
+        data_type: NUMBER(38,0)
+        description: "Identifier of the account owner responsible for managing this account."
+
+      - name: account_unit_annual_value
+        data_type: FLOAT
+        description: "Annual contract value attributed to the account in monetary units."
+
+      - name: account_status
+        data_type: VARCHAR(16777216)
+        description: "Current lifecycle status of the account, such as active or churned."
+
+      - name: account_created_date
+        data_type: DATE
+        description: "Date when the account was first created in the system."
+
+      - name: account_updated_date
+        data_type: DATE
+        description: "Date when the account record was last modified."
+
+      - name: is_active
+        data_type: BOOLEAN
+        description: "Flag indicating whether the account is currently active."
