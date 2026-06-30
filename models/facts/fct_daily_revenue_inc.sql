@@ -31,6 +31,10 @@ select
     revenue_date,
     net_revenue,
     gross_profit,
+    revenue_date,
+    net_revenue,
+    gross_profit,
     profit_per_unit,
+    count(*) as order_count
     order_count
 from daily
