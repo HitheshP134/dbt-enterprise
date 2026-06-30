@@ -28,4 +28,10 @@ daily as (
     group by 1
 )
 
-select * from daily
+select
+    revenue_date,
+    net_revenue,
+    gross_profit,
+    profit_per_unit,
+    order_count
+from daily
