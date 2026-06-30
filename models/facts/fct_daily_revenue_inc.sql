@@ -15,7 +15,7 @@ with sales as (
         quantity
     from {{ ref('fct_sales') }}
 ),
-    select * from {{ ref('fct_sales') }}
+),
 ),
 
 daily as (
