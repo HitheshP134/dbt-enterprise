@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: stg_customers
-    description: "Contains one record per customer account with company details, segmentation, and account status."
+    description: "Contains one record per customer account with company details, segmentation, and account status"
     columns:
       - name: CUSTOMER_ID
         data_type: NUMBER(38,0)

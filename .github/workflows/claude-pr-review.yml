@@ -30,45 +30,22 @@ jobs:
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ github.event.pull_request.number }}
 
-            You are reviewing a pull request for the `enterprise_analytics` dbt project
-            (Snowflake, layered: staging -> dimensions/facts). The PR branch is already
-            checked out in the current working directory. Focus on dbt-specific quality,
-            not generic style nitpicks.
+            You are reviewing a pull request for this dbt project. The PR branch is already
+            checked out in the current working directory.
 
-            Review the changed models, tests, macros, seeds, and YAML for:
+            Review the changed models, tests, macros, seeds, and YAML against this
+            project's standards (auto-loaded from `.claude/CLAUDE.md`). Focus on
+            dbt-specific correctness and data-quality risks over generic style nitpicks.
 
-            MODELING & STRUCTURE
-            - Naming conventions: staging = `stg_`, dimensions = `dim_`, facts = `fct_`.
-            - Layering: staging is the only layer that selects from `source()`; downstream
-              models must use `ref()`. Flag any hardcoded table/schema names.
-            - Materialization matches the layer config in dbt_project.yml
-              (staging=view, dimensions=table, facts=table). Flag overrides that look wrong.
-            - Incremental models: correct unique_key, a sound `is_incremental()` filter,
-              and an appropriate on_schema_change.
-
-            SQL CORRECTNESS
-            - Join fan-out / grain changes that could duplicate rows.
-            - Surrogate keys via dbt_utils.generate_surrogate_key rather than ad-hoc concat.
-            - No `SELECT *` in models that are persisted.
-            - Date logic respecting vars date_spine_start / date_spine_end where relevant.
-
-            TESTS & DOCS
-            - New/changed models have a matching .yml with a description and at least
-              not_null + unique (or a valid key) on the grain column.
-            - Sources and refs referenced in tests actually exist.
-
-            STYLE (per .sqlfluff: snowflake dialect)
-            - lowercase keywords, functions, identifiers; explicit table & column aliases;
-              trailing commas; no subqueries (use CTEs); max line length 140.
-            - Mention style issues briefly and grouped, not line-by-line spam.
-
-            Be concise and actionable. Prioritize correctness and data-quality risks over
-            style. If the PR looks clean, say so briefly.
-
-            Note: The PR branch is already checked out in the current working directory.
-            Use `gh pr comment` for top-level summary feedback.
-            Use `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`)
-            to flag specific lines. Only post GitHub comments - don't submit review text as messages.
+            HOW TO COMMENT (important):
+            - Post your findings as INLINE comments on the specific changed lines using
+              `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
+              This is your primary output - one inline comment per concrete issue.
+            - After the inline comments, use `gh pr comment` ONCE for a short overall
+              summary (e.g. counts by severity, overall verdict). Keep it brief.
+            - Group style nits rather than spamming a comment per line.
+            - If the PR looks clean, post a single short approving summary comment.
+            - Only post GitHub comments - do not submit review text as chat messages.
 
           claude_args: |
             --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"

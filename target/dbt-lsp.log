@@ -3866,3 +3866,392 @@ select * from final
 09:42:36.988555 [info ]: Started scheduling
 09:42:36.988717 [info ]: Finished scheduling [  0.00s]
 09:42:36.991514 [info ]: Cached model count updated: 10 models (accurate)
+07:40:04.324962 [info ]: Started loading project
+07:40:04.353912 [info ]: Loading profiles.yml
+07:40:04.495322 [info ]: Cached model count updated: 10 models (accurate)
+07:40:04.494775 [info ]: Finished loading project [  0.17s]
+07:40:06.211235 [info ]: Started loading project
+07:40:06.212907 [info ]: Loading profiles.yml
+07:40:06.244872 [info ]: Cached model count updated: 10 models (estimate)
+07:40:06.244924 [info ]: Cached model count updated: 10 models (accurate)
+07:40:06.249635 [info ]: Started scheduling
+07:40:06.257789 [info ]: Finished scheduling [  0.01s]
+07:40:06.257858 [debug]: Compilation - 14 nodes selected: {"model.enterprise_analytics.dim_customers", "model.enterprise_analytics.dim_date", "model.enterprise_analytics.dim_employees", "model.enterprise_analytics.dim_products", "model.enterprise_analytics.fct_revenue_daily", "model.enterprise_analytics.fct_sales", "model.enterprise_analytics.stg_customers", "model.enterprise_analytics.stg_employees", "model.enterprise_analytics.stg_orders", "model.enterprise_analytics.stg_products", "seed.enterprise_analytics.raw_customers", "seed.enterprise_analytics.raw_employees", "seed.enterprise_analytics.raw_orders", "seed.enterprise_analytics.raw_products"}
+07:40:07.564083 [info ]: Finished loading project [  1.35s]
+07:40:07.564406 [info ]: Cached model count updated: 10 models (accurate)
+07:40:07.565351 [info ]: Waiting for lease on 'target' directory
+07:40:07.701362 [info ]: Started loading project
+07:40:07.702060 [info ]: Loading profiles.yml
+07:40:07.725024 [info ]: Started parsing
+07:40:07.770206 [info ]: Finished loading project [  0.07s]
+07:40:07.786394 [debug]: Finished parsing models\staging\stg_customers.yml [  0.00s]
+07:40:07.792735 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+07:40:07.801296 [info ]: Finished parsing [  0.08s]
+07:40:07.804404 [info ]: Cached model count updated: 10 models (estimate)
+07:40:07.804422 [info ]: Cached model count updated: 10 models (accurate)
+07:40:07.804725 [info ]: Started scheduling
+07:40:07.805681 [info ]: Finished scheduling [  0.00s]
+07:40:07.805700 [debug]: Compilation - 1 nodes selected: {"model.enterprise_analytics.stg_customers"}
+07:40:07.832877 [info ]: Started building task graph
+07:40:07.836247 [info ]: Finished building task graph [  0.00s]
+07:40:07.854696 [info ]: Started rendering (1 nodes)
+07:40:07.855100 [info ]: Started model STAGE_stage.stg_customers
+07:40:07.855235 [debug]: Started rendering model STAGE_stage.stg_customers
+07:40:07.864416 [debug]: Compiled SQL for node model.enterprise_analytics.stg_customers at target\.lsp\compiled\enterprise_analytics\models\staging\stg_customers.sql
+07:40:07.866740 [debug]: Finished rendering [  0.01s] model STAGE_stage.stg_customers [success]
+07:40:07.866776 [info ]: Finished rendering [  0.01s] (1 nodes, 0 skipped, 0 errors)
+07:40:07.867521 [info ]: Started analyzing (1 nodes)
+07:40:07.867546 [debug]: Started analyzing model STAGE_stage.stg_customers
+07:40:07.895904 [debug]: Finished analyzing [  0.03s] model STAGE_stage.stg_customers [success]
+07:40:07.895939 [info ]: Finished analyzing [  0.03s] (1 nodes, 0 skipped, 0 errors)
+07:40:07.895949 [info ]:  Succeeded [  0.04s] model STAGE_stage.stg_customers (view)
+07:40:07.906028 [info ]: Started scheduling
+07:40:07.906093 [info ]: Finished scheduling [  0.00s]
+07:40:07.906991 [info ]: Cached model count updated: 10 models (accurate)
+07:40:09.555712 [info ]: Started loading project
+07:40:09.556580 [info ]: Loading profiles.yml
+07:40:09.585499 [info ]: Cached model count updated: 10 models (estimate)
+07:40:09.585522 [info ]: Cached model count updated: 10 models (accurate)
+07:40:09.585562 [info ]: Started scheduling
+07:40:09.585661 [info ]: Finished scheduling [  0.00s]
+07:40:09.585676 [debug]: Compilation - 14 nodes selected: {"model.enterprise_analytics.dim_customers", "model.enterprise_analytics.dim_date", "model.enterprise_analytics.dim_employees", "model.enterprise_analytics.dim_products", "model.enterprise_analytics.fct_revenue_daily", "model.enterprise_analytics.fct_sales", "model.enterprise_analytics.stg_customers", "model.enterprise_analytics.stg_employees", "model.enterprise_analytics.stg_orders", "model.enterprise_analytics.stg_products", "seed.enterprise_analytics.raw_customers", "seed.enterprise_analytics.raw_employees", "seed.enterprise_analytics.raw_orders", "seed.enterprise_analytics.raw_products"}
+07:40:09.612210 [info ]: Started building task graph
+07:40:09.612309 [info ]: Finished building task graph [  0.00s]
+07:40:09.612478 [info ]: Finished loading project [  0.06s]
+07:40:09.642830 [info ]: Started rendering (14 nodes)
+07:40:09.643225 [info ]: Started seed STAGE.raw_products
+07:40:09.643273 [debug]: Started rendering seed STAGE.raw_products
+07:40:09.643332 [info ]: Started seed STAGE.raw_orders
+07:40:09.643346 [debug]: Started rendering seed STAGE.raw_orders
+07:40:09.643366 [info ]: Started seed STAGE.raw_employees
+07:40:09.643382 [debug]: Started rendering seed STAGE.raw_employees
+07:40:09.643420 [info ]: Started seed STAGE.raw_customers
+07:40:09.643440 [debug]: Started rendering seed STAGE.raw_customers
+07:40:09.643536 [info ]: Started model STAGE_stage.fct_revenue_daily
+07:40:09.643566 [debug]: Started rendering model STAGE_stage.fct_revenue_daily
+07:40:09.643618 [info ]: Started model STAGE_stage.fct_sales
+07:40:09.643635 [debug]: Started rendering model STAGE_stage.fct_sales
+07:40:09.643649 [info ]: Started model STAGE_stage.stg_orders
+07:40:09.643657 [debug]: Started rendering model STAGE_stage.stg_orders
+07:40:09.643699 [info ]: Started model STAGE_dimensions.dim_products
+07:40:09.643722 [debug]: Started rendering model STAGE_dimensions.dim_products
+07:40:09.643743 [info ]: Started model STAGE_stage.stg_products
+07:40:09.643758 [debug]: Started rendering model STAGE_stage.stg_products
+07:40:09.643780 [info ]: Started model STAGE_dimensions.dim_employees
+07:40:09.643788 [debug]: Started rendering model STAGE_dimensions.dim_employees
+07:40:09.651247 [info ]: Started model STAGE_stage.stg_employees
+07:40:09.651432 [debug]: Started rendering model STAGE_stage.stg_employees
+07:40:09.651514 [info ]: Started model STAGE_dimensions.dim_date
+07:40:09.651567 [debug]: Started rendering model STAGE_dimensions.dim_date
+07:40:09.651604 [info ]: Started model STAGE_dimensions.dim_customers
+07:40:09.651619 [debug]: Started rendering model STAGE_dimensions.dim_customers
+07:40:09.651642 [info ]: Started model STAGE_stage.stg_customers
+07:40:09.651660 [debug]: Started rendering model STAGE_stage.stg_customers
+07:40:09.651726 [debug]: Finished rendering [  0.01s] seed STAGE.raw_products [success]
+07:40:09.651763 [info ]:  Succeeded [  0.01s] seed  STAGE.raw_products (table)
+07:40:09.651862 [debug]: Finished rendering [  0.01s] seed STAGE.raw_orders [success]
+07:40:09.651879 [info ]:  Succeeded [  0.01s] seed  STAGE.raw_orders (table)
+07:40:09.651903 [debug]: Finished rendering [  0.01s] seed STAGE.raw_employees [success]
+07:40:09.651913 [info ]:  Succeeded [  0.01s] seed  STAGE.raw_employees (table)
+07:40:09.651932 [debug]: Finished rendering [  0.01s] seed STAGE.raw_customers [success]
+07:40:09.651939 [info ]:  Succeeded [  0.01s] seed  STAGE.raw_customers (table)
+07:40:09.668858 [debug]: Compiled SQL for node model.enterprise_analytics.stg_customers at target\.lsp\compiled\enterprise_analytics\models\staging\stg_customers.sql
+07:40:09.669095 [debug]: Finished rendering [  0.02s] model STAGE_stage.stg_customers [success]
+07:40:09.669182 [info ]: Started analyzing (10 nodes)
+07:40:09.669218 [debug]: Started analyzing model STAGE_stage.stg_customers
+07:40:09.670434 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_customers [success]
+07:40:09.670488 [info ]:  Succeeded [  0.02s] model STAGE_stage.stg_customers (view)
+07:40:09.679154 [debug]: Compiled SQL for node model.enterprise_analytics.stg_employees at target\.lsp\compiled\enterprise_analytics\models\staging\stg_employees.sql
+07:40:09.679488 [debug]: Finished rendering [  0.03s] model STAGE_stage.stg_employees [success]
+07:40:09.679559 [debug]: Started analyzing model STAGE_stage.stg_employees
+07:40:09.680954 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_employees [success]
+07:40:09.681033 [info ]:  Succeeded [  0.03s] model STAGE_stage.stg_employees (view)
+07:40:09.681264 [debug]: Compiled SQL for node model.enterprise_analytics.stg_products at target\.lsp\compiled\enterprise_analytics\models\staging\stg_products.sql
+07:40:09.681264 [debug]: Compiled SQL for node model.enterprise_analytics.fct_revenue_daily at target\.lsp\compiled\enterprise_analytics\models\facts\fct_revenue_daily.sql
+07:40:09.681367 [debug]: Finished rendering [  0.04s] model STAGE_stage.stg_products [success]
+07:40:09.681416 [debug]: Started analyzing model STAGE_stage.stg_products
+07:40:09.681465 [debug]: Finished rendering [  0.04s] model STAGE_stage.fct_revenue_daily [success]
+07:40:09.681493 [debug]: Started analyzing model STAGE_stage.fct_revenue_daily
+07:40:09.683904 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_products [success]
+07:40:09.683965 [info ]:  Succeeded [  0.04s] model STAGE_stage.stg_products (view)
+07:40:09.684756 [debug]: Finished analyzing [  0.00s] model STAGE_stage.fct_revenue_daily [success]
+07:40:09.684795 [info ]:  Succeeded [  0.04s] model STAGE_stage.fct_revenue_daily (table)
+07:40:09.685209 [debug]: Compiled SQL for node model.enterprise_analytics.fct_sales at target\.lsp\compiled\enterprise_analytics\models\facts\fct_sales.sql
+07:40:09.685207 [debug]: Compiled SQL for node model.enterprise_analytics.dim_products at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_products.sql
+07:40:09.685355 [debug]: Finished rendering [  0.04s] model STAGE_dimensions.dim_products [success]
+07:40:09.685390 [debug]: Started analyzing model STAGE_dimensions.dim_products
+07:40:09.685435 [debug]: Finished rendering [  0.04s] model STAGE_stage.fct_sales [success]
+07:40:09.685443 [debug]: Started analyzing model STAGE_stage.fct_sales
+07:40:09.687013 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_products [success]
+07:40:09.687055 [info ]:  Succeeded [  0.04s] model STAGE_dimensions.dim_products (table)
+07:40:09.687772 [debug]: Compiled SQL for node model.enterprise_analytics.dim_employees at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_employees.sql
+07:40:09.687894 [debug]: Finished rendering [  0.04s] model STAGE_dimensions.dim_employees [success]
+07:40:09.687930 [debug]: Started analyzing model STAGE_dimensions.dim_employees
+07:40:09.688490 [debug]: Compiled SQL for node model.enterprise_analytics.dim_date at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_date.sql
+07:40:09.688609 [debug]: Finished rendering [  0.04s] model STAGE_dimensions.dim_date [success]
+07:40:09.688656 [debug]: Started analyzing model STAGE_dimensions.dim_date
+07:40:09.688962 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_employees [success]
+07:40:09.688974 [info ]:  Succeeded [  0.04s] model STAGE_dimensions.dim_employees (table)
+07:40:09.689290 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_date [success]
+07:40:09.689310 [info ]:  Succeeded [  0.04s] model STAGE_dimensions.dim_date (table)
+07:40:09.689897 [debug]: Finished analyzing [  0.00s] model STAGE_stage.fct_sales [success]
+07:40:09.689922 [info ]:  Succeeded [  0.04s] model STAGE_stage.fct_sales (table)
+07:40:09.690858 [debug]: Compiled SQL for node model.enterprise_analytics.stg_orders at target\.lsp\compiled\enterprise_analytics\models\staging\stg_orders.sql
+07:40:09.690992 [debug]: Finished rendering [  0.05s] model STAGE_stage.stg_orders [success]
+07:40:09.691016 [debug]: Started analyzing model STAGE_stage.stg_orders
+07:40:09.691487 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_orders [success]
+07:40:09.691497 [info ]:  Succeeded [  0.05s] model STAGE_stage.stg_orders (view)
+07:40:09.693200 [debug]: Compiled SQL for node model.enterprise_analytics.dim_customers at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_customers.sql
+07:40:09.693293 [debug]: Finished rendering [  0.04s] model STAGE_dimensions.dim_customers [success]
+07:40:09.693306 [info ]: Finished rendering [  0.05s] (14 nodes, 0 skipped, 0 errors)
+07:40:09.693318 [debug]: Started analyzing model STAGE_dimensions.dim_customers
+07:40:09.693840 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_customers [success]
+07:40:09.693852 [info ]: Finished analyzing [  0.02s] (10 nodes, 0 skipped, 0 errors)
+07:40:09.693858 [info ]:  Succeeded [  0.04s] model STAGE_dimensions.dim_customers (table)
+07:40:09.697109 [info ]: Started scheduling
+07:40:09.697154 [info ]: Finished scheduling [  0.00s]
+07:40:09.697691 [info ]: Cached model count updated: 10 models (accurate)
+08:22:02.132803 [info ]: Started loading project
+08:22:02.148867 [info ]: Loading profiles.yml
+08:22:02.181416 [info ]: Started parsing
+08:22:02.229309 [info ]: Finished loading project [  0.10s]
+08:22:02.235694 [debug]: Finished parsing models\staging\stg_customers.yml [  0.00s]
+08:22:02.251775 [debug]: Finished parsing models\staging\stg_customers.sql [  0.01s]
+08:22:02.258030 [info ]: Finished parsing [  0.08s]
+08:22:02.260170 [info ]: Cached model count updated: 10 models (estimate)
+08:22:02.260193 [info ]: Cached model count updated: 10 models (accurate)
+08:22:02.260232 [info ]: Started scheduling
+08:22:02.260287 [info ]: Finished scheduling [  0.00s]
+08:22:02.260300 [debug]: Compilation - 0 nodes selected: {}
+08:22:02.262171 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion '' does not match any enabled nodes
+08:22:02.263479 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+08:22:03.328008 [info ]: Started building task graph
+08:22:03.328058 [info ]: Finished building task graph [  0.00s]
+08:22:03.333444 [info ]: Started scheduling
+08:22:03.333521 [info ]: Finished scheduling [  0.00s]
+08:22:03.337469 [info ]: Cached model count updated: 10 models (accurate)
+08:22:04.939405 [info ]: Started loading project
+08:22:04.940034 [info ]: Loading profiles.yml
+08:22:04.964186 [info ]: Cached model count updated: 10 models (estimate)
+08:22:04.964209 [info ]: Cached model count updated: 10 models (accurate)
+08:22:04.964249 [info ]: Started scheduling
+08:22:04.964359 [info ]: Finished scheduling [  0.00s]
+08:22:04.964375 [debug]: Compilation - 14 nodes selected: {"model.enterprise_analytics.dim_customers", "model.enterprise_analytics.dim_date", "model.enterprise_analytics.dim_employees", "model.enterprise_analytics.dim_products", "model.enterprise_analytics.fct_revenue_daily", "model.enterprise_analytics.fct_sales", "model.enterprise_analytics.stg_customers", "model.enterprise_analytics.stg_employees", "model.enterprise_analytics.stg_orders", "model.enterprise_analytics.stg_products", "seed.enterprise_analytics.raw_customers", "seed.enterprise_analytics.raw_employees", "seed.enterprise_analytics.raw_orders", "seed.enterprise_analytics.raw_products"}
+08:22:04.990711 [info ]: Started building task graph
+08:22:04.990807 [info ]: Finished building task graph [  0.00s]
+08:22:04.990979 [info ]: Finished loading project [  0.05s]
+08:22:05.033967 [info ]: Started rendering (14 nodes)
+08:22:05.034060 [info ]: Started seed STAGE.raw_products
+08:22:05.034092 [debug]: Started rendering seed STAGE.raw_products
+08:22:05.034151 [info ]: Started seed STAGE.raw_orders
+08:22:05.034180 [debug]: Started rendering seed STAGE.raw_orders
+08:22:05.034212 [info ]: Started seed STAGE.raw_employees
+08:22:05.034231 [debug]: Started rendering seed STAGE.raw_employees
+08:22:05.034258 [info ]: Started seed STAGE.raw_customers
+08:22:05.034276 [debug]: Started rendering seed STAGE.raw_customers
+08:22:05.034309 [info ]: Started model STAGE_stage.fct_revenue_daily
+08:22:05.034344 [debug]: Started rendering model STAGE_stage.fct_revenue_daily
+08:22:05.034403 [info ]: Started model STAGE_stage.fct_sales
+08:22:05.034437 [debug]: Started rendering model STAGE_stage.fct_sales
+08:22:05.034470 [info ]: Started model STAGE_stage.stg_orders
+08:22:05.034492 [debug]: Started rendering model STAGE_stage.stg_orders
+08:22:05.034519 [info ]: Started model STAGE_dimensions.dim_products
+08:22:05.034538 [debug]: Started rendering model STAGE_dimensions.dim_products
+08:22:05.034571 [info ]: Started model STAGE_stage.stg_products
+08:22:05.034594 [debug]: Started rendering model STAGE_stage.stg_products
+08:22:05.034621 [info ]: Started model STAGE_dimensions.dim_employees
+08:22:05.034645 [debug]: Started rendering model STAGE_dimensions.dim_employees
+08:22:05.034672 [info ]: Started model STAGE_stage.stg_employees
+08:22:05.034691 [debug]: Started rendering model STAGE_stage.stg_employees
+08:22:05.034718 [info ]: Started model STAGE_dimensions.dim_date
+08:22:05.034737 [debug]: Started rendering model STAGE_dimensions.dim_date
+08:22:05.034862 [info ]: Started model STAGE_dimensions.dim_customers
+08:22:05.034887 [debug]: Started rendering model STAGE_dimensions.dim_customers
+08:22:05.034919 [info ]: Started model STAGE_stage.stg_customers
+08:22:05.034937 [debug]: Started rendering model STAGE_stage.stg_customers
+08:22:05.035027 [debug]: Finished rendering [  0.00s] seed STAGE.raw_products [success]
+08:22:05.035060 [info ]:  Succeeded [-------] seed  STAGE.raw_products (table)
+08:22:05.035126 [debug]: Finished rendering [  0.00s] seed STAGE.raw_orders [success]
+08:22:05.035144 [info ]:  Succeeded [-------] seed  STAGE.raw_orders (table)
+08:22:05.035177 [debug]: Finished rendering [  0.00s] seed STAGE.raw_employees [success]
+08:22:05.035192 [info ]:  Succeeded [-------] seed  STAGE.raw_employees (table)
+08:22:05.035239 [debug]: Finished rendering [  0.00s] seed STAGE.raw_customers [success]
+08:22:05.035266 [info ]:  Succeeded [-------] seed  STAGE.raw_customers (table)
+08:22:05.054584 [debug]: Compiled SQL for node model.enterprise_analytics.stg_customers at target\.lsp\compiled\enterprise_analytics\models\staging\stg_customers.sql
+08:22:05.055999 [debug]: Finished rendering [  0.02s] model STAGE_stage.stg_customers [success]
+08:22:05.056102 [info ]: Started analyzing (10 nodes)
+08:22:05.056128 [debug]: Started analyzing model STAGE_stage.stg_customers
+08:22:05.057715 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_customers [success]
+08:22:05.057840 [info ]:  Succeeded [  0.02s] model STAGE_stage.stg_customers (view)
+08:22:05.082808 [debug]: Compiled SQL for node model.enterprise_analytics.dim_date at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_date.sql
+08:22:05.083020 [debug]: Finished rendering [  0.05s] model STAGE_dimensions.dim_date [success]
+08:22:05.083106 [debug]: Started analyzing model STAGE_dimensions.dim_date
+08:22:05.084499 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_date [success]
+08:22:05.084565 [info ]:  Succeeded [  0.05s] model STAGE_dimensions.dim_date (table)
+08:22:05.106860 [debug]: Compiled SQL for node model.enterprise_analytics.stg_orders at target\.lsp\compiled\enterprise_analytics\models\staging\stg_orders.sql
+08:22:05.107104 [debug]: Finished rendering [  0.07s] model STAGE_stage.stg_orders [success]
+08:22:05.107208 [debug]: Started analyzing model STAGE_stage.stg_orders
+08:22:05.109317 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_orders [success]
+08:22:05.109410 [info ]:  Succeeded [  0.07s] model STAGE_stage.stg_orders (view)
+08:22:05.110193 [debug]: Compiled SQL for node model.enterprise_analytics.fct_revenue_daily at target\.lsp\compiled\enterprise_analytics\models\facts\fct_revenue_daily.sql
+08:22:05.110535 [debug]: Finished rendering [  0.08s] model STAGE_stage.fct_revenue_daily [success]
+08:22:05.110625 [debug]: Started analyzing model STAGE_stage.fct_revenue_daily
+08:22:05.112267 [debug]: Finished analyzing [  0.00s] model STAGE_stage.fct_revenue_daily [success]
+08:22:05.112307 [info ]:  Succeeded [  0.08s] model STAGE_stage.fct_revenue_daily (table)
+08:22:05.121549 [debug]: Compiled SQL for node model.enterprise_analytics.fct_sales at target\.lsp\compiled\enterprise_analytics\models\facts\fct_sales.sql
+08:22:05.121558 [debug]: Compiled SQL for node model.enterprise_analytics.dim_customers at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_customers.sql
+08:22:05.121755 [debug]: Finished rendering [  0.09s] model STAGE_stage.fct_sales [success]
+08:22:05.121849 [debug]: Started analyzing model STAGE_stage.fct_sales
+08:22:05.121908 [debug]: Finished rendering [  0.09s] model STAGE_dimensions.dim_customers [success]
+08:22:05.121936 [debug]: Started analyzing model STAGE_dimensions.dim_customers
+08:22:05.122619 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_customers [success]
+08:22:05.122642 [info ]:  Succeeded [  0.09s] model STAGE_dimensions.dim_customers (table)
+08:22:05.124427 [debug]: Compiled SQL for node model.enterprise_analytics.dim_employees at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_employees.sql
+08:22:05.124582 [debug]: Finished rendering [  0.09s] model STAGE_dimensions.dim_employees [success]
+08:22:05.124621 [debug]: Started analyzing model STAGE_dimensions.dim_employees
+08:22:05.126439 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_employees [success]
+08:22:05.126476 [info ]:  Succeeded [  0.09s] model STAGE_dimensions.dim_employees (table)
+08:22:05.126642 [debug]: Finished analyzing [  0.00s] model STAGE_stage.fct_sales [success]
+08:22:05.126679 [info ]:  Succeeded [  0.09s] model STAGE_stage.fct_sales (table)
+08:22:05.127195 [debug]: Compiled SQL for node model.enterprise_analytics.stg_employees at target\.lsp\compiled\enterprise_analytics\models\staging\stg_employees.sql
+08:22:05.127340 [debug]: Finished rendering [  0.09s] model STAGE_stage.stg_employees [success]
+08:22:05.127400 [debug]: Started analyzing model STAGE_stage.stg_employees
+08:22:05.128220 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_employees [success]
+08:22:05.128258 [info ]:  Succeeded [  0.09s] model STAGE_stage.stg_employees (view)
+08:22:05.140947 [debug]: Compiled SQL for node model.enterprise_analytics.dim_products at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_products.sql
+08:22:05.141144 [debug]: Finished rendering [  0.11s] model STAGE_dimensions.dim_products [success]
+08:22:05.141195 [debug]: Started analyzing model STAGE_dimensions.dim_products
+08:22:05.141978 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_products [success]
+08:22:05.141994 [info ]:  Succeeded [  0.11s] model STAGE_dimensions.dim_products (table)
+08:22:05.151375 [debug]: Compiled SQL for node model.enterprise_analytics.stg_products at target\.lsp\compiled\enterprise_analytics\models\staging\stg_products.sql
+08:22:05.151555 [debug]: Finished rendering [  0.12s] model STAGE_stage.stg_products [success]
+08:22:05.151589 [info ]: Finished rendering [  0.12s] (14 nodes, 0 skipped, 0 errors)
+08:22:05.151631 [debug]: Started analyzing model STAGE_stage.stg_products
+08:22:05.152096 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_products [success]
+08:22:05.152111 [info ]: Finished analyzing [  0.10s] (10 nodes, 0 skipped, 0 errors)
+08:22:05.152120 [info ]:  Succeeded [  0.12s] model STAGE_stage.stg_products (view)
+08:22:05.156205 [info ]: Started scheduling
+08:22:05.156273 [info ]: Finished scheduling [  0.00s]
+08:22:05.157196 [info ]: Cached model count updated: 10 models (accurate)
+08:39:26.670490 [info ]: Started loading project
+08:39:26.671460 [info ]: Loading profiles.yml
+08:39:26.682151 [info ]: Started parsing
+08:39:26.721664 [info ]: Finished loading project [  0.05s]
+08:39:26.725563 [debug]: Finished parsing models\staging\stg_customers.yml [  0.00s]
+08:39:26.726699 [debug]: Finished parsing models\staging\stg_customers.sql [  0.00s]
+08:39:26.729404 [info ]: Finished parsing [  0.05s]
+08:39:26.731263 [info ]: Cached model count updated: 10 models (estimate)
+08:39:26.731280 [info ]: Cached model count updated: 10 models (accurate)
+08:39:26.731317 [info ]: Started scheduling
+08:39:26.731364 [info ]: Finished scheduling [  0.00s]
+08:39:26.731374 [debug]: Compilation - 0 nodes selected: {}
+08:39:26.731391 [warn ]: [NoNodesForSelectionCriteria (dbt1092)]: The selection criterion '' does not match any enabled nodes
+08:39:26.731406 [warn ]: [NoNodesSelected (dbt1601)]: Nothing to do. Try checking your model configs and model specification args
+08:39:26.763274 [info ]: Started building task graph
+08:39:26.763308 [info ]: Finished building task graph [  0.00s]
+08:39:26.767047 [info ]: Started scheduling
+08:39:26.767101 [info ]: Finished scheduling [  0.00s]
+08:39:26.772191 [info ]: Cached model count updated: 10 models (accurate)
+08:39:28.385268 [info ]: Started loading project
+08:39:28.386830 [info ]: Loading profiles.yml
+08:39:28.418435 [info ]: Cached model count updated: 10 models (estimate)
+08:39:28.418454 [info ]: Cached model count updated: 10 models (accurate)
+08:39:28.418494 [info ]: Started scheduling
+08:39:28.418614 [info ]: Finished scheduling [  0.00s]
+08:39:28.418630 [debug]: Compilation - 14 nodes selected: {"model.enterprise_analytics.dim_customers", "model.enterprise_analytics.dim_date", "model.enterprise_analytics.dim_employees", "model.enterprise_analytics.dim_products", "model.enterprise_analytics.fct_revenue_daily", "model.enterprise_analytics.fct_sales", "model.enterprise_analytics.stg_customers", "model.enterprise_analytics.stg_employees", "model.enterprise_analytics.stg_orders", "model.enterprise_analytics.stg_products", "seed.enterprise_analytics.raw_customers", "seed.enterprise_analytics.raw_employees", "seed.enterprise_analytics.raw_orders", "seed.enterprise_analytics.raw_products"}
+08:39:28.447604 [info ]: Started building task graph
+08:39:28.447725 [info ]: Finished building task graph [  0.00s]
+08:39:28.448018 [info ]: Finished loading project [  0.06s]
+08:39:28.459201 [info ]: Started rendering (14 nodes)
+08:39:28.459251 [info ]: Started seed STAGE.raw_products
+08:39:28.459266 [debug]: Started rendering seed STAGE.raw_products
+08:39:28.459298 [info ]: Started seed STAGE.raw_orders
+08:39:28.459308 [debug]: Started rendering seed STAGE.raw_orders
+08:39:28.459321 [info ]: Started seed STAGE.raw_employees
+08:39:28.459331 [debug]: Started rendering seed STAGE.raw_employees
+08:39:28.459344 [info ]: Started seed STAGE.raw_customers
+08:39:28.459356 [debug]: Started rendering seed STAGE.raw_customers
+08:39:28.459372 [info ]: Started model STAGE_stage.fct_revenue_daily
+08:39:28.459388 [debug]: Started rendering model STAGE_stage.fct_revenue_daily
+08:39:28.459406 [info ]: Started model STAGE_stage.fct_sales
+08:39:28.459412 [debug]: Started rendering model STAGE_stage.fct_sales
+08:39:28.459424 [info ]: Started model STAGE_stage.stg_orders
+08:39:28.459472 [debug]: Started rendering model STAGE_stage.stg_orders
+08:39:28.459536 [info ]: Started model STAGE_dimensions.dim_products
+08:39:28.459559 [debug]: Started rendering model STAGE_dimensions.dim_products
+08:39:28.459591 [info ]: Started model STAGE_stage.stg_products
+08:39:28.459603 [debug]: Started rendering model STAGE_stage.stg_products
+08:39:28.459623 [info ]: Started model STAGE_dimensions.dim_employees
+08:39:28.459629 [debug]: Started rendering model STAGE_dimensions.dim_employees
+08:39:28.459646 [info ]: Started model STAGE_stage.stg_employees
+08:39:28.459659 [debug]: Started rendering model STAGE_stage.stg_employees
+08:39:28.459675 [info ]: Started model STAGE_dimensions.dim_date
+08:39:28.459682 [debug]: Started rendering model STAGE_dimensions.dim_date
+08:39:28.459695 [info ]: Started model STAGE_dimensions.dim_customers
+08:39:28.459708 [debug]: Started rendering model STAGE_dimensions.dim_customers
+08:39:28.459720 [info ]: Started model STAGE_stage.stg_customers
+08:39:28.459726 [debug]: Started rendering model STAGE_stage.stg_customers
+08:39:28.459755 [debug]: Finished rendering [  0.00s] seed STAGE.raw_orders [success]
+08:39:28.459777 [info ]:  Succeeded [-------] seed  STAGE.raw_orders (table)
+08:39:28.459967 [debug]: Finished rendering [  0.00s] seed STAGE.raw_employees [success]
+08:39:28.459993 [info ]:  Succeeded [-------] seed  STAGE.raw_employees (table)
+08:39:28.460042 [debug]: Finished rendering [  0.00s] seed STAGE.raw_products [success]
+08:39:28.460134 [info ]:  Succeeded [-------] seed  STAGE.raw_products (table)
+08:39:28.460179 [debug]: Finished rendering [  0.00s] seed STAGE.raw_customers [success]
+08:39:28.460196 [info ]:  Succeeded [-------] seed  STAGE.raw_customers (table)
+08:39:28.460757 [debug]: Compiled SQL for node model.enterprise_analytics.fct_sales at target\.lsp\compiled\enterprise_analytics\models\facts\fct_sales.sql
+08:39:28.460846 [debug]: Compiled SQL for node model.enterprise_analytics.stg_orders at target\.lsp\compiled\enterprise_analytics\models\staging\stg_orders.sql
+08:39:28.460862 [debug]: Finished rendering [  0.00s] model STAGE_stage.fct_sales [success]
+08:39:28.460908 [info ]: Started analyzing (10 nodes)
+08:39:28.460930 [debug]: Started analyzing model STAGE_stage.fct_sales
+08:39:28.460976 [debug]: Compiled SQL for node model.enterprise_analytics.dim_date at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_date.sql
+08:39:28.460984 [debug]: Finished rendering [  0.00s] model STAGE_stage.stg_orders [success]
+08:39:28.461018 [debug]: Started analyzing model STAGE_stage.stg_orders
+08:39:28.461072 [debug]: Finished rendering [  0.00s] model STAGE_dimensions.dim_date [success]
+08:39:28.461107 [debug]: Started analyzing model STAGE_dimensions.dim_date
+08:39:28.461292 [debug]: Compiled SQL for node model.enterprise_analytics.dim_customers at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_customers.sql
+08:39:28.461496 [debug]: Compiled SQL for node model.enterprise_analytics.dim_products at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_products.sql
+08:39:28.461513 [debug]: Compiled SQL for node model.enterprise_analytics.stg_employees at target\.lsp\compiled\enterprise_analytics\models\staging\stg_employees.sql
+08:39:28.461608 [debug]: Compiled SQL for node model.enterprise_analytics.dim_employees at target\.lsp\compiled\enterprise_analytics\models\dimensions\dim_employees.sql
+08:39:28.461682 [debug]: Compiled SQL for node model.enterprise_analytics.stg_products at target\.lsp\compiled\enterprise_analytics\models\staging\stg_products.sql
+08:39:28.461997 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_date [success]
+08:39:28.462040 [info ]:  Succeeded [  0.00s] model STAGE_dimensions.dim_date (table)
+08:39:28.462087 [debug]: Finished rendering [  0.00s] model STAGE_dimensions.dim_customers [success]
+08:39:28.462115 [debug]: Started analyzing model STAGE_dimensions.dim_customers
+08:39:28.462148 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_orders [success]
+08:39:28.462178 [info ]:  Succeeded [  0.00s] model STAGE_stage.stg_orders (view)
+08:39:28.462206 [debug]: Finished rendering [  0.00s] model STAGE_dimensions.dim_products [success]
+08:39:28.462220 [debug]: Started analyzing model STAGE_dimensions.dim_products
+08:39:28.462239 [debug]: Finished rendering [  0.00s] model STAGE_stage.stg_employees [success]
+08:39:28.462255 [debug]: Started analyzing model STAGE_stage.stg_employees
+08:39:28.462274 [debug]: Finished rendering [  0.00s] model STAGE_dimensions.dim_employees [success]
+08:39:28.462288 [debug]: Started analyzing model STAGE_dimensions.dim_employees
+08:39:28.462304 [debug]: Finished rendering [  0.00s] model STAGE_stage.stg_products [success]
+08:39:28.462315 [debug]: Started analyzing model STAGE_stage.stg_products
+08:39:28.462715 [debug]: Compiled SQL for node model.enterprise_analytics.stg_customers at target\.lsp\compiled\enterprise_analytics\models\staging\stg_customers.sql
+08:39:28.462840 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_employees [success]
+08:39:28.462867 [info ]:  Succeeded [  0.00s] model STAGE_stage.stg_employees (view)
+08:39:28.462914 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_products [success]
+08:39:28.462924 [info ]:  Succeeded [  0.00s] model STAGE_stage.stg_products (view)
+08:39:28.462945 [debug]: Finished rendering [  0.00s] model STAGE_stage.stg_customers [success]
+08:39:28.462962 [debug]: Started analyzing model STAGE_stage.stg_customers
+08:39:28.462984 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_customers [success]
+08:39:28.462995 [info ]:  Succeeded [  0.00s] model STAGE_dimensions.dim_customers (table)
+08:39:28.463054 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_products [success]
+08:39:28.463081 [info ]:  Succeeded [  0.00s] model STAGE_dimensions.dim_products (table)
+08:39:28.463408 [debug]: Finished analyzing [  0.00s] model STAGE_stage.stg_customers [success]
+08:39:28.463438 [info ]:  Succeeded [  0.00s] model STAGE_stage.stg_customers (view)
+08:39:28.463474 [debug]: Compiled SQL for node model.enterprise_analytics.fct_revenue_daily at target\.lsp\compiled\enterprise_analytics\models\facts\fct_revenue_daily.sql
+08:39:28.463546 [debug]: Finished rendering [  0.00s] model STAGE_stage.fct_revenue_daily [success]
+08:39:28.463573 [info ]: Finished rendering [  0.00s] (14 nodes, 0 skipped, 0 errors)
+08:39:28.463597 [debug]: Started analyzing model STAGE_stage.fct_revenue_daily
+08:39:28.463652 [debug]: Finished analyzing [  0.00s] model STAGE_dimensions.dim_employees [success]
+08:39:28.463689 [info ]:  Succeeded [  0.00s] model STAGE_dimensions.dim_employees (table)
+08:39:28.464456 [debug]: Finished analyzing [  0.00s] model STAGE_stage.fct_revenue_daily [success]
+08:39:28.464493 [info ]:  Succeeded [  0.00s] model STAGE_stage.fct_revenue_daily (table)
+08:39:28.464993 [debug]: Finished analyzing [  0.00s] model STAGE_stage.fct_sales [success]
+08:39:28.465017 [info ]: Finished analyzing [  0.00s] (10 nodes, 0 skipped, 0 errors)
+08:39:28.465026 [info ]:  Succeeded [  0.01s] model STAGE_stage.fct_sales (table)
+08:39:28.472326 [info ]: Started scheduling
+08:39:28.472397 [info ]: Finished scheduling [  0.00s]
+08:39:28.473241 [info ]: Cached model count updated: 10 models (accurate)
