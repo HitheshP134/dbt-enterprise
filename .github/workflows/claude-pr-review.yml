@@ -4,6 +4,12 @@ on:
   pull_request:
     types: [opened, synchronize]
 
+# A new push cancels an in-progress review for the same PR, so reviews don't
+# stack up and double-post.
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 # Allow Claude to read the code and post review comments back on the PR.
 permissions:
   contents: read
@@ -33,19 +39,44 @@ jobs:
             You are reviewing a pull request for this dbt project. The PR branch is already
             checked out in the current working directory.
 
-            Review the changed models, tests, macros, seeds, and YAML against this
-            project's standards (auto-loaded from `.claude/CLAUDE.md`). Focus on
-            dbt-specific correctness and data-quality risks over generic style nitpicks.
+            You are a REVIEWER ONLY. Do NOT edit, fix, or commit code. Do NOT push.
+            Your only outputs are review comments. This is a single-pass review: post your
+            comments and then STOP - do not loop, re-read, or re-review.
 
-            HOW TO COMMENT (important):
-            - Post your findings as INLINE comments on the specific changed lines using
+            SCOPE - only the latest changes:
+            - Run `gh pr diff` and review ONLY the lines added/changed in this PR's diff.
+              Do not comment on unchanged surrounding code.
+
+            GET CONTEXT BEFORE SUGGESTING ANY FIX (critical):
+            - You can read the whole repo. Before proposing a change to a model, column, or
+              macro, use Read/Grep/Glob to check how it is used elsewhere:
+                * grep for the model name in other `ref('...')` calls to find downstream models,
+                * grep for any column you'd rename/remove to see where it is selected downstream,
+                * open the model's `.yml` and related upstream/downstream models.
+            - Only suggest a fix you have confirmed will not break downstream models. If a
+              change has downstream impact, DESCRIBE the impact and the safe fix instead of a
+              naive one-line edit. If you cannot verify it is safe, point out the issue and
+              recommend the author validate with `dbt build`, rather than prescribing a risky edit.
+
+            AVOID DUPLICATES (important - this prevents the comment pile-up):
+            - First run `gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments --paginate`
+              to fetch existing inline review comments.
+            - Do NOT post a comment if an existing comment already covers the same file+line
+              and issue. Only raise issues that are genuinely NEW since the last review.
+            - If a previously-raised issue now appears fixed, say nothing about it.
+
+            Review against this project's standards (auto-loaded from `.claude/CLAUDE.md`),
+            focusing on dbt correctness and data-quality risks over style nitpicks.
+
+            HOW TO COMMENT:
+            - Post findings as INLINE comments on the changed lines using
               `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
-              This is your primary output - one inline comment per concrete issue.
-            - After the inline comments, use `gh pr comment` ONCE for a short overall
-              summary (e.g. counts by severity, overall verdict). Keep it brief.
-            - Group style nits rather than spamming a comment per line.
-            - If the PR looks clean, post a single short approving summary comment.
+            - Limit yourself to at most the ~8 most important NEW issues. Group style nits
+              into a single comment rather than one per line.
+            - After inline comments, use `gh pr comment` ONCE for a brief summary.
+            - If there are no new issues, post a single short "no new issues" summary.
             - Only post GitHub comments - do not submit review text as chat messages.
 
           claude_args: |
-            --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
+            --max-turns 20
+            --allowedTools "Read,Grep,Glob,mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api:*)"
