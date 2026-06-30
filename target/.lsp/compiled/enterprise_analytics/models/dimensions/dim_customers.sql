@@ -17,7 +17,7 @@ final as (
         city,
         state,
         country,
-        city || ', ' || state as location,
+        city || ', ' || state as "location",
 
         -- account health
         status,
@@ -25,7 +25,7 @@ final as (
         unit_annual_value,
         case
             when unit_annual_value >= 200000 then 'Tier 1'
-            when unit_annual_value >= 75000  then 'Tier 2'
+            when unit_annual_value >= 75000 then 'Tier 2'
             else 'Tier 3'
         end as revenue_tier,
 

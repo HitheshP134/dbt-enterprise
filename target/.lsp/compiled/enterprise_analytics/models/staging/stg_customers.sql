@@ -16,10 +16,7 @@ staged as (
         status,
         created_at::date as created_date,
         updated_at::date as updated_date,
-        case
-            when status = 'active' then true
-            else false
-        end as is_active
+        coalesce(status = 'active', false) as is_active
     from source
 )
 

@@ -5,11 +5,12 @@ runaway_limit = 10
 max_line_length = 140
 indent_unit = space
 large_file_skip_char_limit = 0
-exclude_rules = AM06
+exclude_rules =
 
 [sqlfluff:templater:jinja]
 apply_dbt_builtins = True
 load_macros_from_path = macros/
+library_path = sqlfluff_libs
 
 [sqlfluff:indentation]
 tab_space_size = 4
@@ -40,4 +41,10 @@ capitalisation_policy = lower
 capitalisation_policy = lower
 
 [sqlfluff:rules:ambiguous.column_references]
-group_by_and_order_by_style = implicit
+group_by_and_order_by_style = explicit
+
+[sqlfluff:rules:structure.subquery]
+forbid_subquery_in = both
+
+[sqlfluff:rules:structure.join_condition_order]
+preferred_first_table_in_join_clause = earlier

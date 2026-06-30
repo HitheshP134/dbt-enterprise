@@ -8,3 +8,4 @@ venv/
 logs/
 .vscode/
 dbt_packages/
+dbt_internal_packages/

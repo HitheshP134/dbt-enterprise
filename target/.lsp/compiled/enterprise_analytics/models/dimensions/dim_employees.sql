@@ -16,13 +16,13 @@ with_manager as (
         e.manager_id,
         m.full_name as manager_name,
         case
-            when e.title like '%VP%'    then 'Leadership'
+            when e.title like '%VP%' then 'Leadership'
             when e.title like '%Chief%' then 'Executive'
             when e.title like 'Senior%' then 'Senior IC'
             else 'IC'
         end as seniority_band
-    from employees e
-    left join employees m on e.manager_id = m.employee_id
+    from employees as e
+    left join employees as m on e.manager_id = m.employee_id
 ),
 
 final as (
