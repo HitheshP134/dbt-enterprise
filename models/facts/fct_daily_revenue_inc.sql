@@ -22,7 +22,7 @@ daily as (
     select
         order_date_key as revenue_date,
         sum(net_amount) as net_revenue,
-        sum(gross_profit) as gross_profit,
+    where order_date_key > (select max(order_date_key) from {{ this }})
         -- average margin per unit
         nullif(sum(gross_profit), 0) / nullif(sum(quantity), 0) as profit_per_unit,
     from sales
