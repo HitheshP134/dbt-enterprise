@@ -1,1 +1,0 @@
-{{ test_unique(column_name="PRODUCT_ID", model=get_where_subquery(ref('stg_products'))) }}

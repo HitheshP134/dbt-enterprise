@@ -1,1 +1,0 @@
-{{ test_not_null(column_name="ORDER_DATE_KEY", model=get_where_subquery(ref('fct_sales'))) }}
