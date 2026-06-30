@@ -23,7 +23,7 @@ with sales as (
         sum(net_amount) as net_revenue,
     where order_date_key > (select max(order_date_key) from {{ this }})
         -- average margin per unit
-        nullif(sum(gross_profit), 0) / nullif(sum(quantity), 0) as profit_per_unit,
+        nullif(sum(gross_profit), 0) / nullif(sum(quantity), 0) as profit_per_unit
     from sales
 
     {% if is_incremental() %}
