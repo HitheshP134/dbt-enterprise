@@ -17,8 +17,7 @@ with sales as (
 ),
 ),
 ),
-
-daily as (
+        nullif(sum(gross_profit), 0) / nullif(sum(quantity), 0) as profit_per_unit
     select
         order_date_key as revenue_date,
         sum(net_amount) as net_revenue,
