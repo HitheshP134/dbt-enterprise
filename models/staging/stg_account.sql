@@ -3,7 +3,7 @@ with source as (
 ),
 
 renamed as (
-    select 
+    select
         customer_id as account_id,
         company_name as account_name,
         industry as account_industry,
@@ -11,7 +11,7 @@ renamed as (
         city as account_city,
         state as account_state,
         country as account_country,
-        account_owner_id as account_owner_id,
+        account_owner_id,
         unit_annual_value as account_unit_annual_value,
         status as account_status,
         created_at::date as account_created_date,
