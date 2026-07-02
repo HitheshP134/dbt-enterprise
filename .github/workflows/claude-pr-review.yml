@@ -23,7 +23,28 @@ jobs:
       - name: Checkout PR
         uses: actions/checkout@v6
         with:
-          fetch-depth: 1
+          fetch-depth: 0
+
+      - name: Determine last reviewed commit
+        id: last_reviewed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          PR="${{ github.event.pull_request.number }}"
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+
+          LAST_SHA=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
+            | jq -r '[.[] | select(.body | test("<!-- claude-review-sha: [0-9a-f]{7,40} -->")) | .body] | last // empty' \
+            | grep -oE '[0-9a-f]{7,40}' || true)
+
+          if [ -z "$LAST_SHA" ]; then
+            LAST_SHA="$BASE_SHA"
+          fi
+
+          echo "sha=$LAST_SHA" >> "$GITHUB_OUTPUT"
+          echo "Last reviewed SHA: $LAST_SHA"
 
       - name: Claude review
         uses: anthropics/claude-code-action@v1
@@ -35,6 +56,8 @@ jobs:
           prompt: |
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ github.event.pull_request.number }}
+            LAST REVIEWED SHA: ${{ steps.last_reviewed.outputs.sha }}
+            HEAD SHA: ${{ github.event.pull_request.head.sha }}
 
             You are reviewing a pull request for this dbt project. The PR branch is already
             checked out in the current working directory.
@@ -43,9 +66,13 @@ jobs:
             Your only outputs are review comments. This is a single-pass review: post your
             comments and then STOP - do not loop, re-read, or re-review.
 
-            SCOPE - only the latest changes:
-            - Run `gh pr diff` and review ONLY the lines added/changed in this PR's diff.
-              Do not comment on unchanged surrounding code.
+            SCOPE - only commits pushed since the last review:
+            - Run `git diff ${{ steps.last_reviewed.outputs.sha }}..${{ github.event.pull_request.head.sha }}`
+              and review ONLY the lines added/changed in that range. This is the incremental
+              diff since your last review of this PR - on the first review of a PR, LAST
+              REVIEWED SHA is the base branch commit, so this is effectively the full PR diff.
+            - Do not comment on unchanged surrounding code, and do not re-review commits that
+              were already covered by a prior review pass.
 
             GET CONTEXT BEFORE SUGGESTING ANY FIX (critical):
             - You can read the whole repo. Before proposing a change to a model, column, or
@@ -58,7 +85,7 @@ jobs:
               naive one-line edit. If you cannot verify it is safe, point out the issue and
               recommend the author validate with `dbt build`, rather than prescribing a risky edit.
 
-            AVOID DUPLICATES (important - this prevents the comment pile-up):
+            AVOID DUPLICATES (belt-and-suspenders on top of the SCOPE restriction above):
             - First run `gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/comments --paginate`
               to fetch existing inline review comments.
             - Do NOT post a comment if an existing comment already covers the same file+line
@@ -73,10 +100,16 @@ jobs:
               `mcp__github_inline_comment__create_inline_comment` (with `confirmed: true`).
             - Limit yourself to at most the ~8 most important NEW issues. Group style nits
               into a single comment rather than one per line.
-            - After inline comments, use `gh pr comment` ONCE for a brief summary.
-            - If there are no new issues, post a single short "no new issues" summary.
+            - After inline comments, use `gh pr comment` ONCE for a brief summary. The summary
+              comment body MUST end with an HTML comment marker recording the commit you just
+              reviewed, exactly in this form (on its own line, nothing else on it):
+              `<!-- claude-review-sha: ${{ github.event.pull_request.head.sha }} -->`
+              This marker is how the next run knows where to resume - do not omit it, and do
+              not add it to inline comments, only to the single summary comment.
+            - If there are no new issues, still post the short "no new issues" summary with
+              the same marker line.
             - Only post GitHub comments - do not submit review text as chat messages.
 
           claude_args: |
             --max-turns 20
-            --allowedTools "Read,Grep,Glob,mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh api:*)"
+            --allowedTools "Read,Grep,Glob,mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr view:*),Bash(gh api:*),Bash(git diff:*)"
