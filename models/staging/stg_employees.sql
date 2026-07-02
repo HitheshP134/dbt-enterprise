@@ -1,4 +1,8 @@
+with source as (
+    select * from {{ source('raw', 'raw_employees') }}
+),
 
+staged as (
     select
         employee_id,
         first_name,
@@ -11,4 +15,7 @@
         manager_id,
         hire_date::date                 as hire_date,
         is_active::boolean              as is_active
-    from {{ source('raw', 'raw_employees') }}
+    from source
+)
+
+select * from staged
