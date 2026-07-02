@@ -36,8 +36,7 @@ jobs:
           BASE_SHA="${{ github.event.pull_request.base.sha }}"
 
           LAST_SHA=$(gh api "repos/$REPO/issues/$PR/comments" --paginate \
-            | jq -r '[.[] | select(.body | test("<!-- claude-review-sha: [0-9a-f]{7,40} -->")) | .body] | last // empty' \
-            | grep -oE '[0-9a-f]{7,40}' || true)
+            | jq -r '[.[].body | scan("<!-- claude-review-sha: ([0-9a-f]{7,40}) -->")[0]?] | last // empty')
 
           if [ -z "$LAST_SHA" ]; then
             LAST_SHA="$BASE_SHA"
